@@ -216,33 +216,6 @@ project/
     &copy; 2025 SEC2323 Team | All rights reserved
   </footer>
 
-  <script>
-    function toggleTheme() {
-      document.body.classList.toggle('dark');
-    }
 
-    function loadFile(filePath) {
-      if (!filePath) return;
-      fetch(filePath)
-        .then(response => response.text())
-        .then(data => {
-          document.getElementById('fileContent').textContent = data;
-        })
-        .catch(() => {
-          document.getElementById('fileContent').textContent = 'Failed to load file.';
-        });
-    }
-    function loadFile(filePath) {
-    if (!filePath) return;
-    fetch(filePath)
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('fileContent').textContent = data;
-      })
-      .catch(() => {
-        document.getElementById('fileContent').textContent = 'Failed to load file.';
-      });
-  }
-  </script>
 </body>
 </html>
