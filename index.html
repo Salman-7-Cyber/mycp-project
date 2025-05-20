@@ -6,19 +6,18 @@
   <title>mycp File Copy Project - SEC2323</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    
     @keyframes fadeInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
 
-section {
-  opacity: 0;
-  transform: translateY(30px);
-  animation: fadeInUp 0.6s ease forwards;
-}
+    section {
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 0.6s ease forwards;
+    }
 
     body {
       font-family: 'Inter', sans-serif;
@@ -26,15 +25,22 @@ section {
       margin: 0;
       padding: 0;
       color: #1e293b;
-      transition:  0.3s ease, color 0.3s ease;
+      transition: 0.3s ease, color 0.3s ease;
     }
+
     header {
-  background: linear-gradient(to bottom, #f8fafc, #0f172a);
-  color: #1e293b;
-  padding: 20px 20px 50px; 
-  text-align: center;
-  transition: 0.5s ease, color 0.5s ease;
-}
+      background: linear-gradient(to bottom, #f8fafc, #0f172a);
+      color: #1e293b;
+      padding: 20px 20px 50px;
+      text-align: center;
+      transition: 0.5s ease, color 0.5s ease;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
 
     nav {
       background-color: #e2e8f0;
@@ -45,18 +51,22 @@ section {
       font-weight: 600;
       transition: background-color 0.3s ease;
     }
+
     nav a {
       color: #1e293b;
       text-decoration: none;
     }
+
     nav a:hover {
       text-decoration: underline;
     }
+
     main {
       max-width: 1200px;
       margin: auto;
       padding: 40px 20px;
     }
+
     section {
       background: white;
       margin-bottom: 30px;
@@ -64,9 +74,11 @@ section {
       border-radius: 12px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     }
+
     h2 {
       margin-top: 0;
     }
+
     pre, code {
       background: #e2e8f0;
       padding: 10px;
@@ -75,13 +87,13 @@ section {
       overflow-x: auto;
     }
 
-
     img.code-img {
       max-width: 100%;
       border-radius: 10px;
       border: 1px solid #cbd5e1;
       margin-top: 10px;
     }
+
     .download-btn {
       display: block;
       width: fit-content;
@@ -93,9 +105,11 @@ section {
       text-decoration: none;
       border-radius: 8px;
     }
+
     .download-btn:hover {
       background: #2563eb;
     }
+
     #themeToggle {
       position: fixed;
       top: 20px;
@@ -107,45 +121,62 @@ section {
       border-radius: 50%;
       cursor: pointer;
     }
+
     footer {
       text-align: center;
       padding: 20px;
       background-color: #1e293b;
       color: white;
     }
-    .dark nav a {
-  color: white;
-}
+
     .dark {
       background: #111827;
       color: #f9fafb;
     }
+
+    .dark nav {
+      background-color: #374151;
+    }
+
+    .dark nav a {
+      color: white;
+    }
+
     .dark section {
       background-color: #1f2937;
       color: #f9fafb;
     }
-    .dark nav {
-      background-color: #374151;
-    }
+
     .dark code, .dark pre {
       background-color: #334155;
     }
-   .dark header {
-  background: linear-gradient(to bottom, #0f172a, #1e293b); 
-  color: white;
-}
 
-
+    .dark header {
+      background: linear-gradient(to bottom, #0f172a, #1e293b);
+      color: white;
+    }
   </style>
+  <script>
+    function toggleTheme() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </head>
 <body>
   <button onclick="toggleTheme()" id="themeToggle">🌙</button>
+
   <header>
     <h1>mycp File Copy Utility Project</h1>
     <p>SEC2323 - System Programming</p>
-<p>Made by: <strong>Yazan Omar Bin Salman</strong>, <strong>Salman Gari</strong>,
-<strong>Khalid Faisal Al-Juaid</strong> و <strong>Zeyad Hassan Allehyani</strong> — Group (3)</p>
+    <p>
+      Made by: <strong>Yazan Omar Bin Salman</strong>,
+      <strong>Salman Gari</strong>,
+      <strong>Khalid Faisal Al-Juaid</strong> و
+      <strong>Zeyad Hassan Allehyani</strong> — Group (3)
+    </p>
   </header>
+
+  <hr style="border: none; height: 1px; background-color: #e2e8f0; margin: 0;">
 
   <nav>
     <a href="#overview">Overview</a>
@@ -162,15 +193,19 @@ section {
     <section id="overview">
       <h2>📘 Project Overview</h2>
       <p>
-      This project aims to build a simple file copy tool called <code>mycp</code> using C language and Linux system calls.
-      It helps students understand how files are handled at the system level.
+        This project aims to build a simple file copy tool called <code>mycp</code> using C language and Linux system calls.
+        It helps students understand how files are handled at the system level.
       </p>
-      <p>This project involves implementing a simplified version of the <code>cp</code> command in C using system calls like <code>open</code>, <code>read</code>, <code>write</code>, and <code>close</code>. It also includes Bash scripts to test the implementation and analyze system calls and memory management using <code>valgrind</code>.</p>
+      <p>
+        This project involves implementing a simplified version of the <code>cp</code> command in C using system calls like
+        <code>open</code>, <code>read</code>, <code>write</code>, and <code>close</code>. It also includes Bash scripts to
+        test the implementation and analyze system calls and memory management using <code>valgrind</code>.
+      </p>
     </section>
 
     <section id="structure">
-  <h2>📂 Project Structure</h2>
-    <pre style="font-size: 24px;">
+      <h2>📂 Project Structure</h2>
+      <pre style="font-size: 24px;">
 project/
 ├── Makefile
 ├── README.md
@@ -182,38 +217,34 @@ project/
 ├── test_copy.sh
 ├── system_call_analysis.sh
 ├── file1.txt
-  </pre>
-</section>
+      </pre>
+    </section>
 
-
-   <section id="tasks">
-  <h2>🛠️ Tasks Summary</h2>
-  <ol style="font-size: 18px;">
-    <li>Complete Makefile with build/test/clean rules</li>
-    <li>Implement file operations in <code>file_ops.c</code></li>
-    <li>Define copy settings and logic in <code>mycp.c</code></li>
-    <li>Parse arguments and validate inputs in <code>main.c</code></li>
-    <li>Write <code>test_copy.sh</code> to verify file copying</li>
-    <li>Use <code>strace</code> in <code>system_call_analysis.sh</code> to compare with <code>cp</code></li>
-    <li>Use <code>valgrind</code> to catch memory leaks</li>
-    <li>Document team effort and design in <code>README.md</code></li>
-  </ol>
-</section>
-
-
+    <section id="tasks">
+      <h2>🛠️ Tasks Summary</h2>
+      <ol style="font-size: 18px;">
+        <li>Complete Makefile with build/test/clean rules</li>
+        <li>Implement file operations in <code>file_ops.c</code></li>
+        <li>Define copy settings and logic in <code>mycp.c</code></li>
+        <li>Parse arguments and validate inputs in <code>main.c</code></li>
+        <li>Write <code>test_copy.sh</code> to verify file copying</li>
+        <li>Use <code>strace</code> in <code>system_call_analysis.sh</code> to compare with <code>cp</code></li>
+        <li>Use <code>valgrind</code> to catch memory leaks</li>
+        <li>Document team effort and design in <code>README.md</code></li>
+      </ol>
+    </section>
 
     <section id="files">
-        <h2>📁 Code Snapshots</h2>
-        <ul>
-          <li><strong>main.c</strong><br><a href="pages/main_c.html" target="_blank">↪ </a></li>
-          <li><strong>mycp.c</strong><br><a href="pages/mycp_c.html" target="_blank">↪ </a></li>
-          <li><strong>file_ops.c</strong><br><a href="pages/file_ops_c.html" target="_blank">↪ </a></li>
-          <li><strong>file_ops.h</strong><br><a href="pages/file_ops_h.html" target="_blank">↪ </a></li>
-          <li><strong>mycp.h</strong><br><a href="pages/mycp_h.html" target="_blank">↪ </a></li>
-          <li><strong>README.md</strong><br><a href="pages/readme.html" target="_blank">↪ </a></li>
-        </ul>
-      </section>
-    
+      <h2>📁 Code Snapshots</h2>
+      <ul>
+        <li><strong>main.c</strong><br><a href="pages/main_c.html" target="_blank">↪ View</a></li>
+        <li><strong>mycp.c</strong><br><a href="pages/mycp_c.html" target="_blank">↪ View</a></li>
+        <li><strong>file_ops.c</strong><br><a href="pages/file_ops_c.html" target="_blank">↪ View</a></li>
+        <li><strong>file_ops.h</strong><br><a href="pages/file_ops_h.html" target="_blank">↪ View</a></li>
+        <li><strong>mycp.h</strong><br><a href="pages/mycp_h.html" target="_blank">↪ View</a></li>
+        <li><strong>README.md</strong><br><a href="pages/readme.html" target="_blank">↪ View</a></li>
+      </ul>
+    </section>
 
     <section id="analysis">
       <h2>🧪 Analysis & Testing</h2>
@@ -226,9 +257,7 @@ project/
   </main>
 
   <footer>
-    &copy;  SEC2323 | 2025 All rights reserved
+    &copy; SEC2323 | 2025 All rights reserved
   </footer>
-
-
 </body>
 </html>
