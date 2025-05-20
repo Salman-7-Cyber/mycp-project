@@ -79,19 +79,19 @@
       margin-top: 0;
     }
 
-    pre, code {
+    code {
+      background: #e2e8f0;
+      padding: 3px 6px;
+      border-radius: 4px;
+      display: inline;
+      font-family: monospace;
+    }
+
+    pre {
       background: #e2e8f0;
       padding: 10px;
       border-radius: 6px;
-      display: block;
       overflow-x: auto;
-    }
-
-    img.code-img {
-      max-width: 100%;
-      border-radius: 10px;
-      border: 1px solid #cbd5e1;
-      margin-top: 10px;
     }
 
     .download-btn {
@@ -130,7 +130,7 @@
     }
 
     .dark {
-      background: #111827;
+      background: #0f172a;
       color: #f9fafb;
     }
 
@@ -138,17 +138,17 @@
       background-color: #374151;
     }
 
-    .dark nav a {
-      color: white;
-    }
-
-    .dark section {
-      background-color: #1f2937;
+    .dark nav a, .dark h2, .dark p {
       color: #f9fafb;
     }
 
-    .dark code, .dark pre {
-      background-color: #334155;
+    .dark section {
+      background-color: #1f2937 !important;
+    }
+
+    .dark code {
+      background-color: #334155 !important;
+      color: #f8fafc;
     }
 
     .dark header {
@@ -158,7 +158,10 @@
   </style>
   <script>
     function toggleTheme() {
-      document.body.classList.toggle('dark');
+      const body = document.body;
+      const button = document.getElementById('themeToggle');
+      body.classList.toggle('dark');
+      button.textContent = body.classList.contains('dark') ? '☀️' : '🌙';
     }
   </script>
 </head>
@@ -176,8 +179,6 @@
     </p>
   </header>
 
-  <hr style="border: none; height: 1px; background-color: #e2e8f0; margin: 0;">
-
   <nav>
     <a href="#overview">Overview</a>
     <a href="#structure">Structure</a>
@@ -192,20 +193,13 @@
 
     <section id="overview">
       <h2>📘 Project Overview</h2>
-      <p>
-        This project aims to build a simple file copy tool called <code>mycp</code> using C language and Linux system calls.
-        It helps students understand how files are handled at the system level.
-      </p>
-      <p>
-        This project involves implementing a simplified version of the <code>cp</code> command in C using system calls like
-        <code>open</code>, <code>read</code>, <code>write</code>, and <code>close</code>. It also includes Bash scripts to
-        test the implementation and analyze system calls and memory management using <code>valgrind</code>.
-      </p>
+      <p>This project aims to build a simple file copy tool called <code>mycp</code> using C language and Linux system calls. It helps students understand how files are handled at the system level.</p>
+      <p>This project involves implementing a simplified version of the <code>cp</code> command in C using system calls like <code>open</code>, <code>read</code>, <code>write</code>, and <code>close</code>. It also includes Bash scripts to test the implementation and analyze system calls and memory management using <code>valgrind</code>.</p>
     </section>
 
     <section id="structure">
       <h2>📂 Project Structure</h2>
-      <pre style="font-size: 24px;">
+      <pre>
 project/
 ├── Makefile
 ├── README.md
@@ -222,7 +216,7 @@ project/
 
     <section id="tasks">
       <h2>🛠️ Tasks Summary</h2>
-      <ol style="font-size: 18px;">
+      <ol>
         <li>Complete Makefile with build/test/clean rules</li>
         <li>Implement file operations in <code>file_ops.c</code></li>
         <li>Define copy settings and logic in <code>mycp.c</code></li>
